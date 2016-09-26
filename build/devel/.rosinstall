@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /program/ugv_ws/src/kitti_player/build/devel/setup.sh
