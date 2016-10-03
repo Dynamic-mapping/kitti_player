@@ -81,6 +81,8 @@ kitti_player_EXTERNAL_OBJECTS =
 
 devel/lib/kitti_player/kitti_player: CMakeFiles/kitti_player.dir/src/kitti_player.cpp.o
 devel/lib/kitti_player/kitti_player: CMakeFiles/kitti_player.dir/build.make
+devel/lib/kitti_player/kitti_player: /opt/ros/indigo/lib/libgrid_map_ros.so
+devel/lib/kitti_player/kitti_player: /opt/ros/indigo/lib/libgrid_map_core.so
 devel/lib/kitti_player/kitti_player: /opt/ros/indigo/lib/libtf.so
 devel/lib/kitti_player/kitti_player: /opt/ros/indigo/lib/libtf2_ros.so
 devel/lib/kitti_player/kitti_player: /opt/ros/indigo/lib/libactionlib.so

@@ -6,6 +6,9 @@ SET (CMAKE_CXX_FLAGS "-O3 -std=c++11 -Wall")
 
 find_package(catkin REQUIRED COMPONENTS
                     roscpp
+                    grid_map_ros
+                    sensor_msgs
+                    cv_bridge
                     tf
                     tf2
                     std_msgs                    
@@ -34,7 +37,9 @@ add_definitions(${PCL_DEFINITIONS})
 
 add_executable(kitti_player
     src/kitti_player.cpp
-    include/tracklets.h)
+    include/tracklets.h
+    include/kitti_player.h
+)
 
 target_link_libraries(kitti_player ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${Boost_LIBRARIES})
 

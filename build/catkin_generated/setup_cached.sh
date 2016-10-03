@@ -13,6 +13,6 @@ export LD_LIBRARY_PATH="/program/ugv_ws/src/kitti_player/build/devel/lib:$LD_LIB
 export PATH="/opt/ros/indigo/bin:/usr/lib/x86_64-linux-gnu/qt5/bin:/usr/bin:/usr/lib/x86_64-linux-gnu/qt5/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export PKG_CONFIG_PATH="/program/ugv_ws/src/kitti_player/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/program/ugv_ws/src/kitti_player/build"
-export PYTHONPATH="/program/ugv_ws/src/kitti_player/build/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export PYTHONPATH="/program/ugv_ws/src/kitti_player/build/devel/lib/python2.7/dist-packages:/program/ugv_ws/devel/lib/python2.7/dist-packages:/opt/ros/indigo/lib/python2.7/dist-packages:/Data/caffe/python:/Data/fcn.berkeleyvision.org"
 export ROSLISP_PACKAGE_DIRECTORIES="/program/ugv_ws/src/kitti_player/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/program/ugv_ws/src/kitti_player:$ROS_PACKAGE_PATH"

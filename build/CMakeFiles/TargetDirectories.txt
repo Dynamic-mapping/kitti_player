@@ -15,10 +15,16 @@
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/geometry_msgs_generate_messages_py.dir
+/program/ugv_ws/src/kitti_player/build/CMakeFiles/grid_map_msgs_generate_messages_cpp.dir
+/program/ugv_ws/src/kitti_player/build/CMakeFiles/grid_map_msgs_generate_messages_lisp.dir
+/program/ugv_ws/src/kitti_player/build/CMakeFiles/grid_map_msgs_generate_messages_py.dir
 /program/ugv_ws/src/kitti_player/build/gtest/CMakeFiles/gtest.dir
 /program/ugv_ws/src/kitti_player/build/gtest/CMakeFiles/gtest_main.dir
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/kitti_player.dir
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/kitti_player_gencfg.dir
+/program/ugv_ws/src/kitti_player/build/CMakeFiles/nav_msgs_generate_messages_cpp.dir
+/program/ugv_ws/src/kitti_player/build/CMakeFiles/nav_msgs_generate_messages_lisp.dir
+/program/ugv_ws/src/kitti_player/build/CMakeFiles/nav_msgs_generate_messages_py.dir
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/roscpp_generate_messages_cpp.dir
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/roscpp_generate_messages_lisp.dir
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/roscpp_generate_messages_py.dir
@@ -39,3 +45,6 @@
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/tf_generate_messages_cpp.dir
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/tf_generate_messages_lisp.dir
 /program/ugv_ws/src/kitti_player/build/CMakeFiles/tf_generate_messages_py.dir
+/program/ugv_ws/src/kitti_player/build/CMakeFiles/visualization_msgs_generate_messages_cpp.dir
+/program/ugv_ws/src/kitti_player/build/CMakeFiles/visualization_msgs_generate_messages_lisp.dir
+/program/ugv_ws/src/kitti_player/build/CMakeFiles/visualization_msgs_generate_messages_py.dir

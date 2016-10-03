@@ -2,7 +2,7 @@ prefix=/program/ugv_ws/src/kitti_player/build/devel
 
 Name: kitti_player
 Description: Description of kitti_player
-Version: 1.0.2
+Version: 0.0.0
 Cflags: -I/program/ugv_ws/src/kitti_player/build/devel/include
 Libs: -L/program/ugv_ws/src/kitti_player/build/devel/lib 
 Requires: dynamic_reconfigure

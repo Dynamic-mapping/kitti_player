@@ -533,6 +533,18 @@ genpy_DIR:PATH=/opt/ros/indigo/share/genpy/cmake
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/indigo/share/geometry_msgs/cmake
 
+//The directory containing a CMake configuration file for grid_map_core.
+grid_map_core_DIR:PATH=/opt/ros/indigo/share/grid_map_core/cmake
+
+//The directory containing a CMake configuration file for grid_map_cv.
+grid_map_cv_DIR:PATH=/opt/ros/indigo/share/grid_map_cv/cmake
+
+//The directory containing a CMake configuration file for grid_map_msgs.
+grid_map_msgs_DIR:PATH=/opt/ros/indigo/share/grid_map_msgs/cmake
+
+//The directory containing a CMake configuration file for grid_map_ros.
+grid_map_ros_DIR:PATH=/opt/ros/indigo/share/grid_map_ros/cmake
+
 //Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/program/ugv_ws/src/kitti_player/build/gtest
 
@@ -579,6 +591,9 @@ message_generation_DIR:PATH=/opt/ros/indigo/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/indigo/share/message_runtime/cmake
 
+//The directory containing a CMake configuration file for nav_msgs.
+nav_msgs_DIR:PATH=/opt/ros/indigo/share/nav_msgs/cmake
+
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/indigo/share/pluginlib/cmake
 
@@ -612,6 +627,9 @@ rostime_DIR:PATH=/opt/ros/indigo/share/rostime/cmake
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/indigo/share/sensor_msgs/cmake
 
+//The directory containing a CMake configuration file for sensor_msgst.
+sensor_msgst_DIR:PATH=sensor_msgst_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/indigo/share/std_msgs/cmake
 
@@ -629,6 +647,9 @@ tf2_ros_DIR:PATH=/opt/ros/indigo/share/tf2_ros/cmake
 
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/indigo/share/tf/cmake
+
+//The directory containing a CMake configuration file for visualization_msgs.
+visualization_msgs_DIR:PATH=/opt/ros/indigo/share/visualization_msgs/cmake
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/indigo/share/xmlrpcpp/cmake

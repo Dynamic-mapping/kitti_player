@@ -6,12 +6,12 @@
         <arg name="camera" default="/kitti_player/grayscale" />
 
     <arg    name="directory"
-            default="~/Desktop/Kitti/2011_09_26/2011_09_26_drive_0001_sync"
+            default="/Data/Kitti_data/2011_09_26/2011_09_26_drive_0001_sync"
             />
 
     <node   name="kitti_player" pkg="kitti_player" type="kitti_player"
             required="true"
-            args= "-d $(arg directory) -a -p map -F 1 -D -V -v -f 10 -i -g"
+            args= "-d $(arg directory) -a -p map -F 1 -v -o car -f 1 -i -g"
             output="screen"
             />
 
@@ -33,6 +33,7 @@ directory      d    *required* - path to the kitti dataset Directory
 frequency      f    set replay Frequency
 all            a    replay All data
 velodyne       v    replay Velodyne data
+object	       o    the object to be selected
 gps            g    replay Gps data
 imu            i    replay Imu data
 grayscale      G    replay Stereo Grayscale images

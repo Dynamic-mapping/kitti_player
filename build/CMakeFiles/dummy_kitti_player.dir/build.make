@@ -47,9 +47,24 @@ include CMakeFiles/dummy_kitti_player.dir/progress.make
 
 CMakeFiles/dummy_kitti_player:
 
+devel/include/kitti_player/kitti_playerConfig.h: ../cfg/kitti_player.cfg
+devel/include/kitti_player/kitti_playerConfig.h: /opt/ros/indigo/share/dynamic_reconfigure/cmake/../templates/ConfigType.py.template
+devel/include/kitti_player/kitti_playerConfig.h: /opt/ros/indigo/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template
+	$(CMAKE_COMMAND) -E cmake_progress_report /program/ugv_ws/src/kitti_player/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating dynamic reconfigure files from cfg/kitti_player.cfg: /program/ugv_ws/src/kitti_player/build/devel/include/kitti_player/kitti_playerConfig.h /program/ugv_ws/src/kitti_player/build/devel/lib/python2.7/dist-packages/kitti_player/cfg/kitti_playerConfig.py"
+	catkin_generated/env_cached.sh /program/ugv_ws/src/kitti_player/build/setup_custom_pythonpath.sh /program/ugv_ws/src/kitti_player/cfg/kitti_player.cfg /opt/ros/indigo/share/dynamic_reconfigure/cmake/.. /program/ugv_ws/src/kitti_player/build/devel/share/kitti_player /program/ugv_ws/src/kitti_player/build/devel/include/kitti_player /program/ugv_ws/src/kitti_player/build/devel/lib/python2.7/dist-packages/kitti_player
+
+devel/share/kitti_player/docs/kitti_playerConfig.dox: devel/include/kitti_player/kitti_playerConfig.h
+
+devel/share/kitti_player/docs/kitti_playerConfig-usage.dox: devel/include/kitti_player/kitti_playerConfig.h
+
+devel/lib/python2.7/dist-packages/kitti_player/cfg/kitti_playerConfig.py: devel/include/kitti_player/kitti_playerConfig.h
+
+devel/share/kitti_player/docs/kitti_playerConfig.wikidoc: devel/include/kitti_player/kitti_playerConfig.h
+
 CMakeFiles/dummy_kitti_player.dir/src/kitti_player.cpp.o: 
 CMakeFiles/dummy_kitti_player.dir/src/kitti_player.cpp.o: ../src/kitti_player.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /program/ugv_ws/src/kitti_player/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /program/ugv_ws/src/kitti_player/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/dummy_kitti_player.dir/src/kitti_player.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/dummy_kitti_player.dir/src/kitti_player.cpp.o -c /program/ugv_ws/src/kitti_player/src/kitti_player.cpp
 
@@ -72,7 +87,7 @@ CMakeFiles/dummy_kitti_player.dir/src/kitti_player.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o: 
 CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o: CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /program/ugv_ws/src/kitti_player/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /program/ugv_ws/src/kitti_player/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o -c /program/ugv_ws/src/kitti_player/build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
 
@@ -95,7 +110,7 @@ CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXComp
 
 CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c.o: 
 CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c.o: CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /program/ugv_ws/src/kitti_player/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /program/ugv_ws/src/kitti_player/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c.o   -c /program/ugv_ws/src/kitti_player/build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c
 
@@ -117,6 +132,11 @@ CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompiler
 CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c.o.provides.build: CMakeFiles/dummy_kitti_player.dir/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c.o
 
 dummy_kitti_player: CMakeFiles/dummy_kitti_player
+dummy_kitti_player: devel/include/kitti_player/kitti_playerConfig.h
+dummy_kitti_player: devel/share/kitti_player/docs/kitti_playerConfig.dox
+dummy_kitti_player: devel/share/kitti_player/docs/kitti_playerConfig-usage.dox
+dummy_kitti_player: devel/lib/python2.7/dist-packages/kitti_player/cfg/kitti_playerConfig.py
+dummy_kitti_player: devel/share/kitti_player/docs/kitti_playerConfig.wikidoc
 dummy_kitti_player: CMakeFiles/dummy_kitti_player.dir/build.make
 .PHONY : dummy_kitti_player
 
