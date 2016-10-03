@@ -208,7 +208,7 @@ int publish_velodyne(ros::Publisher &pub, ros::Publisher &bird_pub, ros::Publish
 
         grid_map::GridMap map({"map"});
         map.setFrameId("map");
-        map.setGeometry(grid_map::Length(30, 30), 0.02, grid_map::Position(20, 0.0));
+        map.setGeometry(grid_map::Length(30, 30), 0.1, grid_map::Position(20, 0.0));
         map.add("truth", 0.0);
 
         for (unsigned int i = 0; i < points->size(); ++i)
