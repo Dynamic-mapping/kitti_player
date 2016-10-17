@@ -110,7 +110,7 @@ void synchCallback(const std_msgs::Bool::ConstPtr& msg)
  * @return 1 if file is correctly readed, 0 otherwise
  */
 int publish_velodyne(ros::Publisher &pub, ros::Publisher &bird_pub, ros::Publisher &truth_pub, string infile, string object_n, unsigned int frameid,
-                     string dir_root, string filename_result, std_msgs::Header *header)
+                     string dir_root, string filename_result, string filename_truth, std_msgs::Header *header)
 {
     fstream input(infile.c_str(), ios::in | ios::binary);
     if (!input.good())
@@ -233,7 +233,7 @@ int publish_velodyne(ros::Publisher &pub, ros::Publisher &bird_pub, ros::Publish
 
         sensor_msgs::Image outimg;
         grid_map::GridMapRosConverter::toImage(map, "map",
-                                               sensor_msgs::image_encodings::MONO8,
+                                               sensor_msgs::image_encodings::RGB8,
                                                0,
                                                3,
                                                outimg);
@@ -243,10 +243,10 @@ int publish_velodyne(ros::Publisher &pub, ros::Publisher &bird_pub, ros::Publish
         cv_bridge::CvImage bird_img;
 
         grid_map::GridMapRosConverter::toCvImage(map, "map",
-                                                sensor_msgs::image_encodings::MONO8,
+                                                sensor_msgs::image_encodings::RGB8,
                                                 0, 3,
                                                 bird_img);
-        cv::imwrite(filename_result+"1.jpg", bird_img.image);
+        cv::imwrite(filename_result+".jpg", bird_img.image);
 
 
         grid_map::GridMapRosConverter::toImage(map, "truth",
@@ -262,7 +262,7 @@ int publish_velodyne(ros::Publisher &pub, ros::Publisher &bird_pub, ros::Publish
                                                 sensor_msgs::image_encodings::MONO8,
                                                 0, 0.5,
                                                 truth_img);
-        cv::imwrite(filename_result+"0.jpg", truth_img.image);
+        cv::imwrite(filename_truth+".jpg", truth_img.image);
 
 
 

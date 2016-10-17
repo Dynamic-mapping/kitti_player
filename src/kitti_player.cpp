@@ -143,6 +143,7 @@ int main(int argc, char **argv)
     unsigned int len = 0;                  //counting elements support variable
     string dir_root             ;
     string dir_result           ;
+    string dir_truth            ;
     string dir_image00          ;
     string full_filename_image00;
     string dir_timestamp_image00;
@@ -165,6 +166,7 @@ int main(int argc, char **argv)
     string dir_velodyne_points  ;
     string full_filename_velodyne;
     string full_filename_result;
+    string full_filename_truth;
     string dir_timestamp_velodyne; //average of start&end (time of scan)
     string str_support;
     cv::Mat cv_image00;
@@ -259,9 +261,11 @@ int main(int argc, char **argv)
     dir_velodyne_points  = options.path;
     dir_image04          = options.path;
     dir_result           = options.path;
+    dir_truth            = options.path;
 
     (*(options.path.end() - 1) != '/' ? dir_root            = options.path + "/"                      : dir_root            = options.path);
     (*(options.path.end() - 1) != '/' ? dir_result          = options.path + "/result/"               : dir_result          = options.path + "result/");
+    (*(options.path.end() - 1) != '/' ? dir_truth           = options.path + "/truth/"                : dir_truth           = options.path + "truth/");
     (*(options.path.end() - 1) != '/' ? dir_image00         = options.path + "/image_00/data/"        : dir_image00         = options.path + "image_00/data/");
     (*(options.path.end() - 1) != '/' ? dir_image01         = options.path + "/image_01/data/"        : dir_image01         = options.path + "image_01/data/");
     (*(options.path.end() - 1) != '/' ? dir_image02         = options.path + "/image_02/data/"        : dir_image02         = options.path + "image_02/data/");
@@ -782,9 +786,10 @@ int main(int argc, char **argv)
             header_support.stamp = current_timestamp;
             full_filename_velodyne = dir_velodyne_points + boost::str(boost::format("%010d") % entries_played ) + ".bin";
             full_filename_result   = dir_result + boost::str(boost::format("%010d") % entries_played );
+            full_filename_truth    = dir_truth  + boost::str(boost::format("%010d") % entries_played );
 
             if (!options.timestamps)
-                publish_velodyne(map_pub, bird_pub, truth_pub, full_filename_velodyne, options.object, entries_played, dir_root, full_filename_result, &header_support);
+                publish_velodyne(map_pub, bird_pub, truth_pub, full_filename_velodyne, options.object, entries_played, dir_root, full_filename_result, full_filename_truth,  &header_support);
             else
             {
                 str_support = dir_timestamp_velodyne + "timestamps.txt";
@@ -798,7 +803,7 @@ int main(int argc, char **argv)
                 timestamps.seekg(30 * entries_played);
                 getline(timestamps, str_support);
                 header_support.stamp = parseTime(str_support).stamp;
-                publish_velodyne(map_pub, bird_pub, truth_pub, full_filename_velodyne, options.object, entries_played, dir_root, full_filename_result, &header_support);
+                publish_velodyne(map_pub, bird_pub, truth_pub, full_filename_velodyne, options.object, entries_played, dir_root, full_filename_result, full_filename_truth, &header_support);
             }
 
         }
