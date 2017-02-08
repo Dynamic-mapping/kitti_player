@@ -11,7 +11,7 @@
 
     <node   name="kitti_player" pkg="kitti_player" type="kitti_player"
             required="true"
-            args= "-d $(arg directory) -a -p map -F 1 -v -o Car -f 1 -i -g"
+            args= "-d $(arg directory) -a -p map -F 1 -v -o Car -f 5 -i -g"
             output="screen"
             />
 
@@ -45,4 +45,5 @@ viewDisp       D    view loaded disparity images
 frame          F    start playing at frame...
 gpsPoints      p    publish GPS/RTK markers to RVIZ, having reference frame as <reference_frame> [example: -p map]
 synchMode      S    Enable Synch mode (wait for signal to load next frame [std_msgs/Bool "data: true"]
+object         o    Enable Object
 -->
