@@ -1,6 +1,9 @@
-# kitti_player
-A ros based package to read the raw kitti data and the labels
+From version 2, this node aims to play the whole kitti data into ROS (Color/Grayscale images, Velodyne scan as PCL, sensor_msgs/Imu Message, GPS as sensor_msgs/NavSatFix Message).
 
+http://www.ira.disco.unimib.it/kitti_player
+https://github.com/iralabdisco/kitti_player
+
+=========
 
 Kitti_player, a player for KITTI raw datasets
 Datasets can be downloaded from: http://www.cvlibs.net/datasets/kitti/raw_data.php
@@ -22,7 +25,6 @@ viewDisp       D    view loaded disparity images
 frame          F    start playing at frame...
 gpsPoints      p    publish GPS/RTK markers to RVIZ, having reference frame as <reference_frame> [example: -p map]
 synchMode      S    Enable Synch mode (wait for signal to load next frame [std_msgs/Bool "data: true"]
-object         o    Output Object
 
 kitti_player needs a directory tree like the following:
 └── 2011_09_26_drive_0001_sync
