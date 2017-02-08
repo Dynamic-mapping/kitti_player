@@ -25,7 +25,6 @@ synchMode      S    Enable Synch mode (wait for signal to load next frame [std_m
 object         o    Output Object
 
 kitti_player needs a directory tree like the following:
-├── calib_cam_to_cam.txt
 └── 2011_09_26_drive_0001_sync
     ├── image_00
     │   └── data
