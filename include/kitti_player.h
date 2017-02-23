@@ -31,6 +31,7 @@
 #include <sensor_msgs/NavSatFix.h>
 #include <sensor_msgs/PointCloud2.h>
 #include <stereo_msgs/DisparityImage.h>
+#include <geometry_msgs/PoseStamped.h>
 #include <std_msgs/Bool.h>
 #include <tf/LinearMath/Transform.h>
 #include <tf/transform_broadcaster.h>
@@ -53,6 +54,12 @@
 #include <grid_map_msgs/GridMap.h>
 
 #include "tracklets.h"
+
+#define DegToRad M_PI/180
+#define RadToDeg 180/M_PI
+
+#define GRAVITY 9.8035
+#define EARTH_R 6367560
 
 using namespace pcl;
 using namespace std;

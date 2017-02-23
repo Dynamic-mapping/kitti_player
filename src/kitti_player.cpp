@@ -184,12 +184,19 @@ int main(int argc, char **argv)
     ros::Publisher disp_pub          = node.advertise<stereo_msgs::DisparityImage>      ("preprocessed_disparity",  1, true);
     ros::Publisher bird_pub          = node.advertise<sensor_msgs::Image>               ("birdView",                1, true);
     ros::Publisher truth_pub         = node.advertise<sensor_msgs::Image>               ("truth",                   1, true);
+    ros::Publisher pose_pub          = node.advertise<geometry_msgs::PoseStamped>       ("pose",                    1, true);
+
+    tf::TransformBroadcaster tf_broadcaster;
 
 
-    sensor_msgs::NavSatFix  ros_msgGpsFix;
-    sensor_msgs::NavSatFix  ros_msgGpsFixInitial;   // This message contains the first reading of the file
-    bool                    firstGpsData = true;    // Flag to store the ros_msgGpsFixInitial message
-    sensor_msgs::Imu        ros_msgImu;
+    sensor_msgs::NavSatFix      ros_msgGpsFix;
+    sensor_msgs::NavSatFix      ros_msgGpsFixInitial;   // This message contains the first reading of the file
+    bool                        firstGpsData = true;    // Flag to store the ros_msgGpsFixInitial message
+    sensor_msgs::Imu            ros_msgImu;
+    geometry_msgs::PoseStamped  ros_msgPose; // relative from initial to current position
+
+    tf::Transform tf_t;
+    tf::Quaternion tf_q;
 
     ros::Subscriber sub = node.subscribe("/kitti_player/synch", 1, synchCallback);    // refs #600
 
@@ -904,6 +911,33 @@ int main(int argc, char **argv)
             }
             imu_pub.publish(ros_msgImu);
 
+        }
+
+        // Publish pose and TF based on gps and gps_initial
+        {
+
+            // pose
+            ros_msgPose.pose.position.y =  (ros_msgGpsFix.latitude - ros_msgGpsFixInitial.latitude) * DegToRad * EARTH_R;
+            ros_msgPose.pose.position.x =  (ros_msgGpsFix.longitude - ros_msgGpsFixInitial.longitude) * DegToRad * EARTH_R
+                                           * cos(ros_msgGpsFix.latitude * DegToRad);
+            ros_msgPose.pose.position.z =  (ros_msgGpsFix.altitude - ros_msgGpsFixInitial.altitude);
+
+            ros_msgPose.pose.orientation.x = ros_msgImu.orientation.x;
+            ros_msgPose.pose.orientation.y = ros_msgImu.orientation.y;
+            ros_msgPose.pose.orientation.z = ros_msgImu.orientation.z;
+            ros_msgPose.pose.orientation.w = ros_msgImu.orientation.w;
+
+            pose_pub.publish(ros_msgPose);
+
+            // publish tf
+            tf_t.setOrigin(tf::Vector3(ros_msgPose.pose.position.x, ros_msgPose.pose.position.y, ros_msgPose.pose.position.z));
+            tf_q.setX(ros_msgImu.orientation.x);
+            tf_q.setY(ros_msgImu.orientation.y);
+            tf_q.setZ(ros_msgImu.orientation.z);
+            tf_q.setW(ros_msgImu.orientation.w);
+
+            tf_t.setRotation(tf_q);
+            tf_broadcaster.sendTransform(tf::StampedTransform(tf_t, current_timestamp, "/world", "/base_link"));
         }
 
         ++progress;

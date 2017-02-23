@@ -11,7 +11,7 @@
 
     <node   name="kitti_player" pkg="kitti_player" type="kitti_player"
             required="true"
-            args= "-d $(arg directory) -a -p map -F 1 -v -o Car -f 5 -i -g"
+            args= "-d $(arg directory) -a -p map -F 1 -v -o Car -f 1 -i -g"
             output="screen"
             />
 
