@@ -18,7 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
                     dynamic_reconfigure
 )
 
-find_package(PCL 1.7 REQUIRED)
+find_package(PCL 1.8.0 EXACT REQUIRED)
 find_package(Boost REQUIRED COMPONENTS thread system program_options)
 
 

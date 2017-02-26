@@ -920,7 +920,11 @@ int main(int argc, char **argv)
             ros_msgPose.pose.position.y =  (ros_msgGpsFix.latitude - ros_msgGpsFixInitial.latitude) * DegToRad * EARTH_R;
             ros_msgPose.pose.position.x =  (ros_msgGpsFix.longitude - ros_msgGpsFixInitial.longitude) * DegToRad * EARTH_R
                                            * cos(ros_msgGpsFix.latitude * DegToRad);
-            ros_msgPose.pose.position.z =  (ros_msgGpsFix.altitude - ros_msgGpsFixInitial.altitude);
+            ros_msgPose.pose.position.z =  (ros_msgGpsFix.altitude - ros_msgGpsFixInitial.altitude)*0.0;
+
+            ROS_DEBUG_STREAM("Pose is " << ros_msgPose.pose.position.x
+                               << ", " << ros_msgPose.pose.position.y
+                               << ", " << ros_msgPose.pose.position.z);
 
             ros_msgPose.pose.orientation.x = ros_msgImu.orientation.x;
             ros_msgPose.pose.orientation.y = ros_msgImu.orientation.y;
