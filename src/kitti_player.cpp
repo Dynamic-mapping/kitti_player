@@ -30,6 +30,7 @@ namespace po = boost::program_options;
  *   -s [ --stereoDisp ] [=arg(=1)] (=0) use pre-calculated disparities
  *   -D [ --viewDisp   ] [=arg(=1)] (=0) view loaded disparity images
  *   -F [ --frame      ] [=arg(=0)] (=0) start playing at frame ...
+ *   -L [ --loop       ] [=arg(=1)] (=0) replay mode ...
  *
  * Datasets can be downloaded from: http://www.cvlibs.net/datasets/kitti/raw_data.php
  */
@@ -54,6 +55,7 @@ int main(int argc, char **argv)
     ("stereoDisp,s",  po::value<bool>         (&options.stereoDisp)       ->default_value(0) ->implicit_value(1)   ,  "use pre-calculated disparities")
     ("viewDisp  ,D ", po::value<bool>         (&options.viewDisparities)  ->default_value(0) ->implicit_value(1)   ,  "view loaded disparity images")
     ("frame     ,F",  po::value<unsigned int> (&options.startFrame)       ->default_value(0) ->implicit_value(0)   ,  "start playing at frame...")
+    ("loop      ,L",  po::value<bool>         (&options.loop)             ->default_value(0) ->implicit_value(1)   ,  "loop mode")
     ("gpsPoints ,p",  po::value<string>       (&options.gpsReferenceFrame)->default_value("")                      ,  "publish GPS/RTK markers to RVIZ, having reference frame as <reference_frame> [example: -p map]")
     ("object    ,o",  po::value<string>       (&options.object)           ->default_value(" ")                     ,  "the obejct to be selected")
     ("synchMode ,S",  po::value<bool>         (&options.synchMode)        ->default_value(0) ->implicit_value(1)   ,  "Enable Synch mode (wait for signal to load next frame [std_msgs/Bool data: true]")
@@ -949,6 +951,13 @@ int main(int argc, char **argv)
 
         if (!options.synchMode)
             loop_rate.sleep();
+
+        // Loop
+        if (options.loop) {
+            if (entries_played == total_entries) {
+                entries_played = options.startFrame;
+            }
+        }
     }
     while (entries_played <= total_entries - 1 && ros::ok());
 

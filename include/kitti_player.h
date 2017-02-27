@@ -85,6 +85,7 @@ struct kitti_player_options
     bool    stereoDisp;       // use precalculated stereoDisparities
     bool    viewDisparities;  // view use precalculated stereoDisparities
     bool    synchMode;        // start with synchMode on (wait for message to send next frame)
+    bool    loop;             // loop mode
     unsigned int startFrame;  // start the replay at frame ...
     string  gpsReferenceFrame; // publish GPS points into RVIZ as RVIZ Markers
     string  object;            // the object to be select.

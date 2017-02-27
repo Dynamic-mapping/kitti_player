@@ -6,12 +6,12 @@
         <arg name="camera" default="/kitti_player/grayscale" />
 
     <arg    name="directory"
-            default="/program/Data/2011_09_26_drive_0001_sync"
+            default="/program/Data/2011_09_26_drive_0002_sync"
             />
 
     <node   name="kitti_player" pkg="kitti_player" type="kitti_player"
             required="true"
-            args= "-d $(arg directory) -a -p map -F 1 -v -o Car -V -f 1 -i -g"
+            args= "-d $(arg directory) -a -p map -F 1 -v -o Car -V -f 10 -i -g -L"
             output="screen"
             />
 
@@ -43,6 +43,7 @@ timestamps     T    use KITTI timestamps
 stereoDisp     s    use pre-calculated disparities
 viewDisp       D    view loaded disparity images
 frame          F    start playing at frame...
+loop           L    loop mode...
 gpsPoints      p    publish GPS/RTK markers to RVIZ, having reference frame as <reference_frame> [example: -p map]
 synchMode      S    Enable Synch mode (wait for signal to load next frame [std_msgs/Bool "data: true"]
 object         o    Enable Object
