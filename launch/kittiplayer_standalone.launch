@@ -6,12 +6,12 @@
         <arg name="camera" default="/kitti_player/grayscale" />
 
     <arg    name="directory"
-            default="/program/Data/2011_09_26_drive_0002_sync"
+            default="/program/Data/2011_09_26_drive_0009_sync"
             />
 
     <node   name="kitti_player" pkg="kitti_player" type="kitti_player"
             required="true"
-            args= "-d $(arg directory) -a -p map -F 1 -v -o Car -V -f 10 -i -g -L"
+            args= "-d $(arg directory) -a -p map -F 1 -v -o Car -f 10 -i -g -L"
             output="screen"
             />
 
