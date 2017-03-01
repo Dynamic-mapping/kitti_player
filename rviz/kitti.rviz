@@ -5,8 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /velodyne641
-        - /PointCloud21
       Splitter Ratio: 0.316071
     Tree Height: 853
   - Class: rviz/Selection
@@ -54,7 +52,7 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.4
+      Size (m): 1.5
       Style: Flat Squares
       Topic: /dynamic_map/dy_obj
       Unreliable: false
@@ -153,22 +151,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 141.028
+      Distance: 241.665
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 11.5254
-        Y: -10.4233
-        Z: -9.8538
+        X: 8.22593
+        Y: 9.16192
+        Z: -9.86211
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.4948
+      Pitch: 1.4698
       Target Frame: base_link
       Value: Orbit (rviz)
-      Yaw: 1.90673
+      Yaw: 5.19174
     Saved: ~
 Window Geometry:
   Displays:
@@ -188,5 +186,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1920
-  X: 1920
+  X: 0
   Y: 24

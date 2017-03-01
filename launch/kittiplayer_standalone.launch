@@ -6,7 +6,7 @@
         <arg name="camera" default="/kitti_player/grayscale" />
 
     <arg    name="directory"
-            default="/program/Data/2011_09_26_drive_0009_sync"
+            default="/program/Data/2011_09_26_drive_0005_sync"
             />
 
     <node   name="kitti_player" pkg="kitti_player" type="kitti_player"
